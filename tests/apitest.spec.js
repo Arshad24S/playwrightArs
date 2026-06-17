@@ -55,7 +55,6 @@ test('API test Ab', async ({ page }) => {
         }
     }
 
-    await page.pause();
 
 })
 

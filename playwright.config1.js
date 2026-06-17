@@ -33,7 +33,6 @@ const config = ({
                 video: 'retain-on-failure',
                 ...devices['iPhone 11'],
                 ignoreHTTPSErrors: true,
-                permissions: ['geolocation'],
 
             }
         },

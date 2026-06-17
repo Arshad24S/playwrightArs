@@ -15,12 +15,29 @@ test('codegen test',{tag:['@abc','@dcb']}, async ({ page }) => {
       const tablecolumns= await page.locator(".table-display td")
       for (let i=0;i< await tablerows.count();i++){
         const rowtext= await tablerows.nth(i).textContent();
-        if(rowtext.includes("Python")){console.log(rowtext);}
-
+        if(rowtext.includes("Python"))
+            {
+                console.log(rowtext);
+        }
+    }
        await page.locator("#displayed-text").isVisible();
-       await page.locator("hide-textbox").click();
+       await page.locator("#hide-textbox").click();
        await page.locator("#displayed-text").isHidden();
 
+       const headers=await page.locator(".tableFixHead thead tr th")
+
+       for (let i=0; i< await headers.count();i++){
+        const headertext= await headers.nth(i).textContent();
+             console.log(headertext);
+       }
+       
+       const rowdata=await page.locator(".tableFixHead tbody tr")
+       for (let i=0; i< await rowdata.count();i++){
+        const rowdatatext= await rowdata.nth(i).textContent();
+        if(rowdatatext.includes("Bengaluru")){
+              console.log(rowdatatext);
+        }
+           
+       }
       
-    }
 })

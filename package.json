@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test tests/apitest.spec.js"
+    "Regression": "npx playwright test tests/apitest.spec.js",
+    "UITestcases": "npx playwright test tests/testall.spec.js",
+    "APITestcases": "npx playwright test tests/apitest.spec.js --grep @APITests"
   },
   "keywords": [],
   "author": "",
